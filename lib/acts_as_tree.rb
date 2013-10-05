@@ -149,6 +149,16 @@ module ActsAsTree
       nodes
     end
 
+    def descendents
+      children.each_with_object(children) {|child, arr|
+        arr.concat child.descendents
+      }
+    end
+
+    def self_and_descendents
+      [self] + descendents
+    end
+
     # Returns the root node of the tree.
     def root
       node = self
