@@ -166,14 +166,14 @@ class TreeTest < Test::Unit::TestCase
     assert_equal [@root2], @root2.self_and_ancestors
   end
 
-  def test_self_and_descendents
-    assert_equal [@root1, @root_child1, @root_child2, @child1_child, @child1_child_child], @root1.self_and_descendents
-    assert_equal [@root2], @root2.self_and_descendents
+  def test_self_and_descendants
+    assert_equal [@root1, @root_child1, @root_child2, @child1_child, @child1_child_child], @root1.self_and_descendants
+    assert_equal [@root2], @root2.self_and_descendants
   end
 
-  def test_descendents
-    assert_equal [@root_child1, @root_child2, @child1_child, @child1_child_child], @root1.descendents
-    assert_equal [], @root2.descendents
+  def test_descendants
+    assert_equal [@root_child1, @root_child2, @child1_child, @child1_child_child], @root1.descendants
+    assert_equal [], @root2.descendants
   end
 
   def test_nullify
